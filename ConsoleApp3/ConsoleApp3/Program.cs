@@ -1,136 +1,101 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp3
+class PriorityQueue<T>
 {
-    public abstract class Equipment
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public Equipment(string name, string description)
-        {
-            this.Name = name;
-            this.Description = description;
-        }
-    }
-    public class MobileEquipment : Equipment
-    {
-        int distance = 0;
-        double maintainenceCost = 0.0;
-        public MobileEquipment(string name, string description) : base(name, description)
-        {
+    private Dictionary<T, int> elements = new Dictionary<T, int>();
+    private List<(int, T)> heap = new List<(int, T)>();
 
-        }
-        public int MoveBy(int distance)
+    public void Enqueue(T element, int priority)
+    {
+        elements[element] = priority;
+        heap.Add((priority, element));
+        int i = heap.Count - 1;
+        while (i > 0)
         {
-            distance += distance;
-            return distance;
-        }
-        public double MaintainenceCost(int numberOfWheels)
-        {
-            maintainenceCost = numberOfWheels * distance;
-            return maintainenceCost;
+            int parent = (i - 1) / 2;
+            if (heap[parent].Item1 <= heap[i].Item1) break;
+            (heap[parent], heap[i]) = (heap[i], heap[parent]);
+            i = parent;
         }
     }
-    public class ImmobileEquipment : Equipment
-    {
-        int distance = 0;
-        double maintainenceCost = 0.0;
-        public ImmobileEquipment(string name, string description) : base(name, description)
-        {
 
-        }
-        public int MoveBy(int distance)
-        {
-            distance += distance;
-            return distance;
-        }
-        public double MaintainenceCost(double weight)
-        {
-            maintainenceCost = weight * distance;
-            return maintainenceCost;
-        }
-    }
-    public class AllEquipmentFunctions
+    public T Dequeue()
     {
-        static List<Equipment> EquipmentList = new List<Equipment>();
-        Equipment equipment;
-        public void CreateEquipment()
+        int lastIndex = heap.Count - 1;
+        (heap[0], heap[lastIndex]) = (heap[lastIndex], heap[0]);
+        T element = heap[lastIndex].Item2;
+        heap.RemoveAt(lastIndex);
+        elements.Remove(element);
+        int i = 0;
+        while (true)
         {
-            Console.WriteLine("Enter the Name of Equipment");
-            string name = Console.ReadLine();
-            Console.WriteLine("Enter the Description of Equipment");
-            string description = Console.ReadLine();
-            Console.WriteLine("Is this a Mobile Equipment(y/n)");
-            string isMobilestr = Console.ReadLine();
-            bool isMobile;
-            while (true)
+            int leftChild = 2 * i + 1;
+            int rightChild = 2 * i + 2;
+            if (leftChild >= heap.Count) break;
+            int minChild = (rightChild >= heap.Count || heap[leftChild].Item1 <= heap[rightChild].Item1) ? leftChild : rightChild;
+            if (heap[i].Item1 <= heap[minChild].Item1) break;
+            (heap[i], heap[minChild]) = (heap[minChild], heap[i]);
+            i = minChild;
+        }
+        return element;
+    }
+
+    public T GetHighestPriority()
+    {
+        return heap[0].Item2;
+    }
+
+    public bool IsEmpty()
+    {
+        return heap.Count == 0;
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        PriorityQueue<string> queue = new PriorityQueue<string>();
+
+        while (true)
+        {
+            Console.WriteLine("Enter a command: (enqueue, dequeue, peek, contains, size, reverse, center, traverse, quit)");
+            string command = Console.ReadLine().ToLower();
+
+            try
             {
-                if (isMobilestr == "y")
+                switch (command)
                 {
-                    isMobile = true;
-                    break;
+                    case "enqueue":
+                        Console.WriteLine("Enter an item to add:");
+                        string item = Console.ReadLine();
+                        Console.WriteLine("Enter the item's priority (an integer):");
+                        int priority = int.Parse(Console.ReadLine());
+                        queue.Enqueue(item, priority);
+                        Console.WriteLine("Item added to queue");
+                        break;
+
+                    case "dequeue":
+                        string dequeued = queue.Dequeue();
+                        Console.WriteLine("Dequeued item: {0}", dequeued);
+                        break;
+                    default:
+
+                        break;
                 }
-                else if (isMobilestr == "n")
-                {
-                    isMobile = false;
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Command");
-                }
             }
-
-            if (isMobile)
+            catch (ArgumentException ex)
             {
-                equipment = new MobileEquipment(name, description);
+                Console.WriteLine(ex.Message);
             }
-            else
+            catch (InvalidOperationException ex)
             {
-                equipment = new ImmobileEquipment(name, description);
+                Console.WriteLine(ex.Message);
             }
-            EquipmentList.Add(equipment);
-        }
-
-        public void DeleteEquipment()
-        {
-            Console.WriteLine("Enter the name of the Equipment");
-            string name = Console.ReadLine();
-            equipment = EquipmentList.Find(e => e.Name == name);
-            if(equipment!=null)
+            catch (Exception ex)
             {
-                EquipmentList.Remove(equipment);
-                Console.WriteLine("Element deleted Successfully");
+                Console.WriteLine("An error occurred: {0}", ex.Message);
             }
-            else
-            {
-                Console.WriteLine("Element not Found");
-            }
-        }
-        public void DeleteAllMobileEquipment()
-        {
-            Console.WriteLine("All Mobile Equipment is deleted");
-            EquipmentList.RemoveAll(e => e is MobileEquipment);          
-        }
-        public void DeleteAllImmobileEquipment()
-        {
-            Console.WriteLine("All Immobile Equipment is deleted");
-            EquipmentList.RemoveAll(e => e is ImmobileEquipment);
-        }
-        public void ListMobileEquipment()
-        {
-
-        }
-    }
-        
-
-
-    class Program
-    {       
-        static void Main(string[] args)
-        {           
-               
         }
     }
 }
