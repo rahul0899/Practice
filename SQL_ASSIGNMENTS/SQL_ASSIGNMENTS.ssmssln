@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 18.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASSIGNMENT1", "ASSIGNMENT1", "{14FD78B0-80ED-4F87-86D8-025B22275C93}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL_ASSIGNMENT1", "SQL_ASSIGNMENT1\SQL_ASSIGNMENT1.ssmssqlproj", "{621C4931-1F38-4FD1-9987-E4746EFE0B35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASSIGNMENT2", "ASSIGNMENT2", "{2E53525C-80B2-4DB5-B5A8-620A6CEB1147}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL_ASSIGNMENT2", "SQL_ASSIGNMENT2\SQL_ASSIGNMENT2.ssmssqlproj", "{21141BA3-44C0-4A28-9242-0DF886E7BD25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASSIGNMENT3", "ASSIGNMENT3", "{7732CFA6-AC1E-4CAA-81F7-024EA274A0F5}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL_ASSIGNMENT3", "SQL_ASSIGNMENT3\SQL_ASSIGNMENT3.ssmssqlproj", "{53C33F2D-2A1D-4709-BF5C-10663B3209EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{621C4931-1F38-4FD1-9987-E4746EFE0B35}.Default|Default.ActiveCfg = Default
+		{21141BA3-44C0-4A28-9242-0DF886E7BD25}.Default|Default.ActiveCfg = Default
+		{9C63332F-8C3F-43E3-9A9F-1795721A63E9}.Default|Default.ActiveCfg = Default
+		{53C33F2D-2A1D-4709-BF5C-10663B3209EE}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{621C4931-1F38-4FD1-9987-E4746EFE0B35} = {14FD78B0-80ED-4F87-86D8-025B22275C93}
+		{21141BA3-44C0-4A28-9242-0DF886E7BD25} = {2E53525C-80B2-4DB5-B5A8-620A6CEB1147}
+		{53C33F2D-2A1D-4709-BF5C-10663B3209EE} = {7732CFA6-AC1E-4CAA-81F7-024EA274A0F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {651A4DF8-EBFE-4A11-B8CE-2AD495130578}
+	EndGlobalSection
+EndGlobal

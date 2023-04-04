@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 18.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{ABBBF8DC-4007-4FA1-934E-CFB0832B50BB}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL Server Scripts2", "SQL Server Scripts2\SQL Server Scripts2.ssmssqlproj", "{F082D5D9-E17B-4241-891F-377F78FC78F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder2", "NewFolder2", "{639EB336-8936-4102-9B94-6D3C9C89B713}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "SQL Server Scripts3", "SQL Server Scripts3\SQL Server Scripts3.ssmssqlproj", "{CB270B32-9E23-41E4-B3FE-5D5B03CD17E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F082D5D9-E17B-4241-891F-377F78FC78F5}.Default|Default.ActiveCfg = Default
+		{CB270B32-9E23-41E4-B3FE-5D5B03CD17E5}.Default|Default.ActiveCfg = Default
+		{F7107293-1FD1-465B-BF7B-F4220C6BE329}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F082D5D9-E17B-4241-891F-377F78FC78F5} = {ABBBF8DC-4007-4FA1-934E-CFB0832B50BB}
+		{CB270B32-9E23-41E4-B3FE-5D5B03CD17E5} = {639EB336-8936-4102-9B94-6D3C9C89B713}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA30C212-83C5-4013-9BEC-6B80ED8800E6}
+	EndGlobalSection
+EndGlobal
