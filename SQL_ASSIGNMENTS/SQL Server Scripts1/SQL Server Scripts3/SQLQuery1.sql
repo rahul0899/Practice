@@ -1,1 +1,0 @@
-Select * from Sales.CurrencyRate;
