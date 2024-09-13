@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MrEPl3eAeUjv2kqy8odHghH9BbymrsRkmdXHvcWs+ps=",
+  "Source": "EmployeeVerificationBackend",
+  "BasePath": "_content/EmployeeVerificationBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
